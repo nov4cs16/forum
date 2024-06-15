@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*
+*{
+    background-color: rgba(60, 6, 6, 0.863);
+    color:rgb(197, 208, 203) !important;
+}*/
+

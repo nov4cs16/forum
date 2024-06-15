@@ -1,0 +1,72 @@
+/*@media (max-width: 410px) {
+    #app > div > div > div > header > div{
+      gap:25vw;  
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    #app > div > div > div > main > div.flex.flex-col.gap-y-\[26px\].h-screen.mt-6 > div.mb-4 > div:nth-child(2) > table {
+        min-width: 70%;
+        margin: 0 auto;
+    }
+
+    #app > div > div > div > main > div.flex.flex-col.gap-y-\[26px\].h-screen.mt-6 > div:nth-child(3) > div:nth-child(2) > table {
+        min-width: 70%;
+        margin: 0 auto;
+    }
+
+    table > thead > tr > th:nth-child(1),
+    table > tbody > tr > td:nth-child(1) {
+        width: 30% !important;
+    }
+
+    table > thead > tr > th:nth-child(2),
+    table > tbody > tr > td:nth-child(2) {
+        width: 70% !important;
+    }
+
+    #app > div > div > div > main > div.flex.flex-col.gap-y-\[26px\].h-screen.mt-6 > h2 {
+        min-width: 70%;
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    #app > div > div > div > main > div.flex.flex-col.gap-y-\[26px\].h-screen.mt-6 > div.mb-4 > div:nth-child(2) > table {
+        min-width: 95%;
+        margin: 0 auto;
+    }
+
+    #app > div > div > div > main > div.flex.flex-col.gap-y-\[26px\].h-screen.mt-6 > div:nth-child(3) > div:nth-child(2) > table {
+        min-width: 95%;
+        margin: 0 auto;
+    }
+
+    table > thead > tr > th:nth-child(1),
+    table > tbody > tr > td:nth-child(1) {
+        width:20% !important;
+    }
+
+    table > thead > tr > th:nth-child(2),
+    table > tbody > tr > td:nth-child(2) {
+        width: 80% !important;
+    }
+
+    #app > div > div > div > main > div.flex.flex-col.gap-y-\[26px\].h-screen.mt-6 > h2 {
+        min-width: 85%;
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+*/
