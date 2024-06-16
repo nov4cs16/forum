@@ -42,6 +42,7 @@ import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
 import Modal from '@/Components/Modal';
 import { router } from '@inertiajs/react'
+import PublicLayout from '@/Layouts/PublicLayout';
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -237,3 +238,5 @@ export default function Register() {
         </GuestLayout>
     );
 }
+
+Register.layout = page => <PublicLayout children={page} title="Register" />

@@ -69,16 +69,16 @@ export default function Thread({ auth, laravelVersion, phpVersion }) {
             </Head>
           
                         <main className="mt-20 space-y-8">
-                            <h1 className="text-4xl font-bold text-center text-white dark:text-gray-100">
+                            <h1 className="text-4xl font-bold text-center text-white">
                                 {title}
                             </h1>
-                            <p className="text-center text-white dark:text-gray-400">
+                            <p className="text-center text-white">
                                 Posted by {user.name} on {new Date(data.created_at).toLocaleDateString()}
                             </p>
-                            <article className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                                <div className="prose dark:prose-dark">
+                            <article className="bg-white rounded-lg shadow-md p-6">
+                                <div className="prose">
                                     <div className="flex items-center mb-4">
-                                        <p className="font-semibold text-gray-800 dark:text-gray-100 flex items-center">
+                                        <p className="font-semibold text-gray-800 flex items-center">
                                             <span className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full mr-2">
                                                 <span className="material-icons">person</span>
                                             </span>
@@ -114,17 +114,17 @@ export default function Thread({ auth, laravelVersion, phpVersion }) {
                                 <h2 className="text-2xl text-white font-semibold mb-4">Comments</h2>
                                 <div className="space-y-4">
                                     {comments.map(comment => (
-                                        <div key={comment.id} className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col gap-4">
-                                            <p className="font-semibold text-gray-800 dark:text-gray-100 flex items-center">
+                                        <div key={comment.id} className="bg-white rounded-lg shadow p-4 flex flex-col gap-4">
+                                            <p className="font-semibold text-gray-800 flex items-center">
                                                 <span className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full mr-2">
                                                     <span className="material-icons">person</span>
                                                 </span>
                                                 <span>{comment.user.name}</span>
                                             </p>
-                                            <p className="text-gray-600 dark:text-gray-400">
+                                            <p className="text-gray-600">
                                                 {comment.body}
                                             </p>
-                                            <p className="text-sm text-gray-500 dark:text-gray-500">
+                                            <p className="text-sm text-gray-500">
                                                 {new Date(comment.created_at).toLocaleString()}
                                             </p>
                                         </div>

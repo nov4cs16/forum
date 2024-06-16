@@ -39,7 +39,6 @@ import { Link, Head } from '@inertiajs/react';
 import { usePage } from '@inertiajs/react';
 import React, { useState } from 'react';
 import { router } from '@inertiajs/react'
-import './Posts.css'
 import PublicLayout from '@/Layouts/PublicLayout';
 
 export default function Post({ auth, laravelVersion, phpVersion }) {

@@ -39,7 +39,6 @@ import { useEffect, useState } from 'react';
 
 export default function Dashboard({ auth }) {
 
-    console.log('Dashboard.jsx ', auth)
     return (
         <AuthenticatedLayout
             auth={auth}
@@ -58,66 +57,4 @@ export default function Dashboard({ auth }) {
             </div>
         </AuthenticatedLayout>
     );
-    const propiedadesDeseadas = ['id', 'name', 'edad'];
-
-    const usersFiltrados = users.map(user =>
-        Object.fromEntries(
-            Object.entries(user).filter(([key]) => propiedadesDeseadas.includes(key))
-        )
-    );
-
-    console.log(usersFiltrados);
-
-
-    /*
-    [
-      { id: 1, name: 'sergio', edad: '20' },
-      { id: 2, name: 'andrea', edad: '40' },
-      { id: 3, name: 'braulio', edad: '50' }
-    ]
-    Resumen
-    Desestructuración: [key] extrae solo la clave del par [clave, valor].
-    Object.entries: Convierte el objeto en un array de pares [clave, valor].
-    filter: Filtra esos pares para incluir solo las claves deseadas.
-    Object.fromEntries: Convierte el array de pares filtrados de nuevo en un objeto.
-    Este patrón es muy poderoso para manipular objetos en JavaScript y es ampliamente utilizado para crear 
-    versiones reducidas de objetos con solo las propiedades necesarias.*/
-
-
-    console.log(usersFiltrados);
-
-    useEffect(() => {
-        setUsuario(user)
-    }, [])
-
-
-    result = user;
-    return (
-        <div style={{ backgroundColor: 'black', color: 'white', display: 'flex', flexDirection: 'col', justifyContent: 'center', width: '100vw', height: '100vh' }}>
-            {/*{results.map((name, index) => (
-                <div style={{ backgroundColor: 'grey', margin: '5px', padding: '10px' }} key={index}> {name} </div>
-            ))}*/}
-            {/*  {results.map((r, index) => (
-                <div style={{ backgroundColor: 'grey', margin: '5px', padding: '10px' }} key={index}> {r.name} </div>
-            ))}*/}
-        </div>
-    )
-
-    {/*return (
-        <AuthenticatedLayout
-            user={auth.user}
-            header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}
-        >
-            <Head title="Dashboard" />
-
-            <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900">You're logged in!</div>
-
-                    </div>
-                </div>
-            </div>
-        </AuthenticatedLayout>
-    );*/}
 }

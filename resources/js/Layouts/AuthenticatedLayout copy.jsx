@@ -41,15 +41,9 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/react';
 
 export default function Authenticated({ auth, user, header, children }) {
+
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
     const isAdmin = auth.roles.includes("admin")
-
-    /* if (user.pivot.includes(1)) {
-         console.log("El usuario es admin.");
-     } else {
-         console.log("El usuario no es admin  ",user.pivot);
-     }*/
-    console.log('auth ', isAdmin)
 
     return (
         <div className="min-h-screen bg-gray-100">

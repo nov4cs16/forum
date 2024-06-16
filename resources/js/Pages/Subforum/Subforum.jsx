@@ -36,7 +36,6 @@ SOFTWARE.
 import CustomTable from '@/Components/table/CustomTable';
 import { Link, Head } from '@inertiajs/react';
 import { usePage } from '@inertiajs/react';
-import './Subforum.css'
 import { useState } from 'react';
 import PublicLayout from '@/Layouts/PublicLayout';
 

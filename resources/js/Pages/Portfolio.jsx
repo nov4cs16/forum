@@ -211,7 +211,7 @@ const Portfolio = () => {
                     <h2>Conocimientos</h2>
 
                     <div style={{width:'100vw',display:'flex',justifyContent:'center',gap:'30px'}} className="fila">
-                        <div style={{ height: '20vh', width: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '20px' }} className="col">
+                    <div style={{ height: '20vh', width: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',textAlign:'center', gap: '20px' }} className="col">
                             <h3 style={{ color: '#e56121' }}>FRONTEND</h3>
                             <div className="contenedor-intereses">
                                 <div className="interes">
@@ -222,19 +222,11 @@ const Portfolio = () => {
                                     <i className="fa-solid fa-gamepad"></i>
                                     <span>NEXT.JS</span>
                                 </div>
-                                {/* <div className="interes">
-                                    <i className="fa-solid fa-headphones"></i>
-                                    <span>LARAVEL (básico)</span>
-                                </div>
-                                <div className="interes">
-                                    <i className="fa-solid fa-plane"></i>
-                                    <span>NODE.JS (básico)</span>
-                                </div>
-*/}
+                 
                             </div>
                         </div>
 
-                        <div style={{ height: '20vh', width: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '20px' }} className="col">
+                        <div style={{ height: '20vh', width: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',textAlign:'center', gap: '20px' }} className="col">
                             <h3 style={{ color: '#e56121' }}>BACKEND</h3>
                             <div className="contenedor-intereses">
                                 <div className="interes">
@@ -242,10 +234,10 @@ const Portfolio = () => {
                                     <span>LARAVEL</span>
                                 </div>
                                 <div className="interes">
-                                    <i className="fa-solid fa-headphones"></i>
+                                    <i className="fa-solid fa-gamepad"></i>
                                     <span>NODE.JS (básico)</span>
-                                </div>                          
-
+                                </div>
+                 
                             </div>
                         </div>
                     </div>
@@ -268,7 +260,7 @@ const Portfolio = () => {
 
                             <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
                                 <div className="fila" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                                    <a href="https://github.com/tuusuario/turepositorio"
+                                    <a href="https://sergioruizdiaweb.website/"
                                         style={{
                                             width: '100%',
                                             backgroundColor: '#e56121',
@@ -284,12 +276,12 @@ const Portfolio = () => {
                                             alignSelf: 'center',
 
                                         }}>
-                                        <span style={{ fontSize: '1.5em', marginBottom: '5px', marginRight: '6px' }}>Backend</span>
-                                        <FontAwesomeIcon icon={faGithub} style={{ fontSize: '2em' }} />
+                                        <span style={{ fontSize: '1.5em', marginBottom: '5px', marginRight: '6px' }}>Pagina web</span>
+                                     {/*   <FontAwesomeIcon icon={faGithub} style={{ fontSize: '2em' }} />*/}
                                     </a>
                                 </div>
                                 <div className="fila" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
-                                    <a href="https://github.com/tuusuario/turepositorio"
+                                    <a href="https://github.com/nov4cs16/forum/tree/master"
                                         style={{
                                             width: '100%',
                                             backgroundColor: '#e56121',
@@ -304,7 +296,7 @@ const Portfolio = () => {
                                             gap: '20px',
                                             alignSelf: 'center',
                                         }}>
-                                        <span style={{ fontSize: '1.5em' }}>Frontend</span>
+                                        <span style={{ fontSize: '1.5em' }}>Código fuente</span>
                                         <FontAwesomeIcon icon={faGithub} style={{ fontSize: '2em' }} />
                                     </a>
                                 </div>

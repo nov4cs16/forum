@@ -29,7 +29,7 @@ function PublicLayout({ children }) {
         };
     }, []);
     return (
-        <div className="flex items-center justify-center bg-gradient-to-r from-blue-400 to-blue-600 text-black/50 dark:bg-black dark:text-white/50">
+        <div className="flex items-center justify-center bg-gradient-to-r from-blue-400 to-blue-600 text-black/50">
             <div className="mt-10 lg:w-[60vw] relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
                 <div className="relative w-full px-2 sm:px-10">
                     <header className="flex flex-col items-center justify-between">
@@ -53,13 +53,13 @@ function PublicLayout({ children }) {
 
                             <Link
                                 href="/"
-                                className="border lg:border-none text-center block lg:inline-block lg:mt-0 text-white rounded-md px-3 py-2 text-sm lg:text-base ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                className="border lg:border-none text-center block lg:inline-block lg:mt-0 text-white rounded-md px-3 py-2 text-sm lg:text-base ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                             >
                                 Inicio
                             </Link>
                             <Link
                                href="/contact"                                
-                                className=" border lg:border-none text-center block lg:inline-block lg:mt-0 text-white rounded-md px-3 py-2 text-sm lg:text-base ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                className=" border lg:border-none text-center block lg:inline-block lg:mt-0 text-white rounded-md px-3 py-2 text-sm lg:text-base ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                             >
                                 Contacto
                             </Link>
@@ -67,7 +67,7 @@ function PublicLayout({ children }) {
                                 <Link
                                     href="/dashboard"
                                   
-                                    className="border lg:border-none text-center block lg:inline-block lg:mt-0 text-white rounded-md px-3 py-2 text-sm lg:text-base ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                    className="border lg:border-none text-center block lg:inline-block lg:mt-0 text-white rounded-md px-3 py-2 text-sm lg:text-base ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                                 >
                                     Dashboard
                                 </Link>
@@ -76,14 +76,14 @@ function PublicLayout({ children }) {
                                     <Link
                                         /* to={route('login')}*/
                                         href="/login"
-                                        className="border lg:border-none text-center block lg:inline-block lg:mt-0 text-white rounded-md px-3 py-2 text-sm lg:text-base ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                        className="border lg:border-none text-center block lg:inline-block lg:mt-0 text-white rounded-md px-3 py-2 text-sm lg:text-base ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                                     >
                                         Ingresar
                                     </Link>
                                     <Link
                                         /*to={route('register')}*/
                                         href="/register"
-                                        className="border lg:border-none text-center block lg:inline-block lg:mt-0 text-white rounded-md px-3 py-2 text-sm lg:text-base ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                        className="border lg:border-none text-center block lg:inline-block lg:mt-0 text-white rounded-md px-3 py-2 text-sm lg:text-base ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                                     >
                                         Registrarse
                                     </Link>
@@ -92,7 +92,7 @@ function PublicLayout({ children }) {
                         </nav>
                     </header>
                     {children}
-                    <footer className="py-16 text-center text-sm text-black dark:text-white/70">
+                    <footer className="py-16 text-center text-sm text-black">
                             <Link
                                 href={route('serviceterms')}
                                 className="ml-5 text-sm text-white underline hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"

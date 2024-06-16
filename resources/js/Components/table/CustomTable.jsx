@@ -154,7 +154,7 @@ function CustomTable({
                 )}
             </div>
             <div>
-                <table className="dark:bg-slate-800 min-w-full bg-white border-blue-900 rounded-lg overflow-hidden shadow-lg">
+                <table className="min-w-full bg-white border-blue-900 rounded-lg overflow-hidden shadow-lg">
                     <thead className={`${headColor} border-blue-950`}>
                         <tr>
                             {showCheckboxes && (

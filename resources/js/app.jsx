@@ -39,7 +39,6 @@ import '../css/app.css';
 import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import PublicLayout from './Layouts/PublicLayout';
 
 const appName = import.meta.env.VITE_APP_NAME || 'SRDforums';
 
@@ -66,36 +65,12 @@ createInertiaApp({
     },
     setup({ el, App, props }) {
         const root = createRoot(el);
-        const isDashboardOrAdminPanel = props.initialPage.component === 'AdminPanel' || props.initialPage.component === 'Dashboard';
-        console.log('initialPage.component:', props.initialPage.component);
-        console.log('isDashboardOrAdminPanel:', isDashboardOrAdminPanel);
-
-      /*  if (!isDashboardOrAdminPanel) {
-            root.render(
-                <PublicLayout auth={props.initialPage.props.auth}>
-                <App {...props} />
-            </PublicLayout>
-            );
-        } else {*/
-            root.render(
+                    root.render(
                     <App {...props} />
             );
-    //    }
+
     },
     progress: {
         color: '#4B5563',
     },
 });
-
-/*
-En Tests.jsx tengo CLOJURE 
-
-OJOOOOOOOOOOOOOOOOOOO NO OLVIDAR QUE AL CREAR UNA SUBCARPETA EN PAJES LA DEBO AGREGAR ACA
-   resolve: (name) => {        
-        if (name == 'AdminPanel')
-            return resolvePageComponent(`./Pages/Admin/${name}.jsx`, import.meta.glob('./Pages.jsx'))
-        if (name == 'Subforum')
-            return resolvePageComponent(`./Pages/Subforum/${name}.jsx`, import.meta.glob('./Pages/*.jsx'))
-        return resolvePageComponent(`./Pages/${name}.jsx`, import.meta.glob('./Pages/**.jsx'))
-    }
-*/

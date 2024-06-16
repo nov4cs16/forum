@@ -41,14 +41,9 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/react';
 
 export default function Authenticated({ auth, user, header, children }) {
+   
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
     const isAdmin = auth.roles.includes("admin")
-
-    /* if (user.pivot.includes(1)) {
-         console.log("El usuario es admin.");
-     } else {
-         console.log("El usuario no es admin  ",user.pivot);
-     }*/
 
     return (
         <div className="min-h-screen bg-gray-100">
@@ -87,7 +82,6 @@ export default function Authenticated({ auth, user, header, children }) {
                                                 className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
                                                 {user.name}
-
                                                 {/*<svg
                                                     className="ms-2 -me-0.5 h-4 w-4"
                                                     xmlns="http://www.w3.org/2000/svg"
