@@ -61,7 +61,6 @@ class ForumController extends Controller
     public function create(): Response
     {
         return Inertia::render('AdminPanel', [
-            //'canResetPassword' => Route::has('password.request'),
             'status' => session('status'),
         ]);
     }
@@ -70,53 +69,26 @@ class ForumController extends Controller
      * Store a newly created resource in storage.
      */
 
-     public function store(Request $request)
-{
-    $request->validate([
-        'name' => 'required|unique:forums',
-        'description' => 'required'
-    ]);
-  
-    $forumData = [
-        'name' => $request->name,
-        'description' => $request->description
-    ];
-
-    $forum = Forum::create($forumData);
-
-   
-    $forums = Forum::with('subforums')->get();
-    return Inertia::render('AdminPanel', [
-        'data' => $forums,
-       // 'data' => $subforums,
-        'entityName' => 'forums' // Aquí agregamos 'entityName' al array de datos
-    ]);
-    //return response()->json($forum, 201);
-}
-
-    public function storee(Request $request)
+    public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|unique:forums',
+            'description' => 'required'
+        ]);
 
-    $request->validate([
-        'name' => 'required|unique:forums',
-        'description' => 'required'
-    ]);
-  
-    $forumData = [
-        'name' => $request->name,
-        'description' => $request->description
-    ];
-    $forum = Forum::create($forumData);
+        $forumData = [
+            'name' => $request->name,
+            'description' => $request->description
+        ];
 
- $subforum = new Subforum([
-        'name' => "sdsadsda",
-    'description' => "3333212"
-]);
+        $forum = Forum::create($forumData);
 
-$forum->subforums()->save($subforum);
 
-    return response()->json($forum, 201);
-   
+        $forums = Forum::with('subforums')->get();
+        return Inertia::render('AdminPanel', [
+            'data' => $forums,
+            'entityName' => 'forums'
+        ]);
     }
 
     /**
@@ -125,16 +97,15 @@ $forum->subforums()->save($subforum);
     public function show(string $id)
     {
         $forum = Forum::with('subforums')->findOrFail($id);
-      $forum->subforums->each(function ($subforum) {
-        $subforum->type = 'link';
-    });
+        $forum->subforums->each(function ($subforum) {
+            $subforum->type = 'link';
+        });
 
-    //return response()->json( $forum->subforums);
-      return Inertia::render('Subforum', [
-        'data' => $forum->subforums,
-        'forum_name' =>$forum->name,
-        'entityName' => 'subforums' // Aquí agregamos 'entityName' al array de datos
-    ]);
+        return Inertia::render('Subforum', [
+            'data' => $forum->subforums,
+            'forum_name' => $forum->name,
+            'entityName' => 'subforums' 
+        ]);
     }
 
     /**
@@ -160,10 +131,8 @@ $forum->subforums()->save($subforum);
         $forums = Forum::with('subforums')->get();
         return Inertia::render('AdminPanel', [
             'data' => $forums,
-           // 'data' => $subforums,
-            'entityName' => 'forums' // Aquí agregamos 'entityName' al array de datos
+            'entityName' => 'forums'
         ]);
-       // return response()->json($forum, 200);
     }
 
     /**
@@ -176,8 +145,7 @@ $forum->subforums()->save($subforum);
         $forums = Forum::with('subforums')->get();
         return Inertia::render('AdminPanel', [
             'data' => $forums,
-           // 'data' => $subforums,
-            'entityName' => 'forums' // Aquí agregamos 'entityName' al array de datos
+            'entityName' => 'forums' 
         ]);;
     }
 }

@@ -76,91 +76,61 @@ class PostController extends Controller
             'title' => 'required',
             'body' => 'required'
         ]);
-     //   $subforum = Subforum::find($request->subforum_id);
 
+        // Crear el subforo con los datos proporcionados en la solicitud
+        $post = Post::create([
+            'subforum_id' => $request->subforum_id,
+            'user_id' => $request->user_id,
+            'title' => $request->title,
+            'body' => $request->body
+        ]);
 
-    // Crear el subforo con los datos proporcionados en la solicitud
-    $post = Post::create([
-        'subforum_id' => $request->subforum_id,
-        'user_id' => $request->user_id,
-        'title' => $request->title,
-        'body' => $request->body
-    ]);
- /*   $post->load('subforum');
-    $subforum->posts()->save($post);
-    $posts = Post::with('subforum')->get();
-    $subforums = Subforum::all();*/
+        $subforum = Subforum::with('posts.user', 'posts.comments')->findOrFail($request->subforum_id);
 
-    $subforum = Subforum::with('posts.user','posts.comments')->findOrFail($request->subforum_id);
-        
-    $subforum->posts->each(function ($post) {
-        $post->type = 'link';
-    });
+        $subforum->posts->each(function ($post) {
+            $post->type = 'link';
+        });
 
-    $posts = $subforum->posts->map(function ($post) {
-        return [
-            'id' => $post->id,
-            'title' => $post->title,
-         //  'body' => $post->body,
-            'subforum_id' => $post->subforum_id,
-            'user_id' => $post->user_id,
-            'created_at' => $post->created_at,
-            'updated_at' => $post->updated_at,
-            'type' => $post->type,
-           // 'user' => [
-              //  'id' => $post->user->id,
-                //'name' => $post->user->name
-             
-            //]
-            'replies' => $post->comments->count(),
-            'author'=>$post->user->name
-        ];
-    });
+        $posts = $subforum->posts->map(function ($post) {
+            return [
+                'id' => $post->id,
+                'title' => $post->title,
+                'subforum_id' => $post->subforum_id,
+                'user_id' => $post->user_id,
+                'created_at' => $post->created_at,
+                'updated_at' => $post->updated_at,
+                'type' => $post->type,
+                'replies' => $post->comments->count(),
+                'author' => $post->user->name
+            ];
+        });
 
- //   $posts = Post::with('user', 'comments')->get();
-    return Inertia::render('Posts', [
-        'data' => $posts,
-        'subforum_id'=> $request->subforum_id,
-        'entityName' => 'posts'
-    ]);
-        //return response()->json($forum, 201);
+        return Inertia::render('Posts', [
+            'data' => $posts,
+            'subforum_id' => $request->subforum_id,
+            'entityName' => 'posts'
+        ]);
+
     }
 
     /**
      * Display the specified resource.
      */
-
-     public function show222(string $id)
-     {
- 
- 
-         $post = Post::with(['user', 'comments.user'])->findOrFail($id);
-         
-   
-     //  return response()->json( ['data'=>$post]);
-       return Inertia::render('Thread', [
-         'data' => $post,
-     
-         'entityName' => 'comments' // Aquí agregamos 'entityName' al array de datos
-     ]);
- }
+    
     public function show(string $id)
     {
+        $post = Post::with('user', 'comments.user')->findOrFail($id);
 
+        return Inertia::render('Thread', [
+            'data' => $post,
+            'entityName' => 'comments'
+        ]);
+    }
 
-        $post = Post::with('user','comments.user')->findOrFail($id);
-        
-  
-      //return response()->json( $forum->subforums);
-      return Inertia::render('Thread', [
-        'data' => $post,
-        
-        'entityName' => 'comments' // Aquí agregamos 'entityName' al array de datos
-    ]);
-}
     /**
      * Show the form for editing the specified resource.
      */
+
     public function edit(Post $post)
     {
         //

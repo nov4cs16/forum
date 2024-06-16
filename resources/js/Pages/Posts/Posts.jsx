@@ -65,45 +65,38 @@ export default function Post({ auth, laravelVersion, phpVersion }) {
     return (
         <>
             <Head title="Welcome" />
-          
-                           <main className="mt-20">
-                            <div className="welcome-message max-w-3xl mx-auto text-center mt-8">
-                                <h1 className="text-4xl font-bold text-white mb-4">¡Comenta, o crea un tema!</h1>
-                                <p className="text-lg text-white">Este es un espacio donde podras crear temas o responder, recorda siempre hacerlo con respeto para mantener un ambiente amistoso :) </p>
-                            </div>
-
-                            <div style={{width:'60vw'}} className="text-left mt-8">
-                                <button
-                                    onClick={openModal}
-                                    className="bg-blue-900 text-white px-4 py-2 rounded-md shadow-sm"
-                                >
-                                    Create Post
-                                </button>
-                            </div>
-
-                            <div className="flex flex-col gap-y-[26px] h-screen mt-6">
-                                                        
-                                <div>
-                                {hasData ? (
-                                        <CustomTable
-                                        values={rest}
-                                        entityName={entityName}
-                                        excludedKeys={excludedKeys}
-                                    />
-                                    ) : (
-                                        <p>No hay subforos disponibles.</p>
-                                    )}
-                                </div>
-                            </div>
-                        </main>
-
-                        {auth.user &&
-                            <CreatePostModal subforumId={rest.subforum_id} userId={auth.user.id} show={isModalOpen} onClose={closeModal} />
-                        }
-
-                       
+            <main className="mt-20">
+                <div className="welcome-message max-w-3xl mx-auto text-center mt-8">
+                    <h1 className="text-4xl font-bold text-white mb-4">¡Comenta, o crea un tema!</h1>
+                    <p className="text-lg text-white">Este es un espacio donde podras crear temas o responder, recorda siempre hacerlo con respeto para mantener un ambiente amigable :) </p>
+                </div>
+                <div style={{ width: '60vw' }} className="text-left mt-8">
+                    <button
+                        onClick={openModal}
+                        className="bg-blue-900 text-white px-4 py-2 rounded-md shadow-sm"
+                    >
+                        Create Post
+                    </button>
+                </div>
+                <div className="flex flex-col gap-y-[26px] h-screen mt-6">
+                    <div>
+                        {hasData ? (
+                            <CustomTable
+                                values={rest}
+                                entityName={entityName}
+                                excludedKeys={excludedKeys}
+                            />
+                        ) : (
+                            <p>No hay subforos disponibles.</p>
+                        )}
+                    </div>
+                </div>
+            </main>
+            {auth.user &&
+                <CreatePostModal subforumId={rest.subforum_id} userId={auth.user.id} show={isModalOpen} onClose={closeModal} />
+            }
         </>
     );
 }
 
-Post.layout = page => <PublicLayout  children={page} title="Posts" />
+Post.layout = page => <PublicLayout children={page} title="Posts" />

@@ -46,7 +46,6 @@ class AdminPanelController extends Controller
 {
     public function index()
     {
-        // Puedes pasar datos a la vista si es necesario
         return Inertia::render('AdminPanel',[
             'name'=>'index'
         ]);
@@ -54,8 +53,7 @@ class AdminPanelController extends Controller
     public function index_forums()
     {
         $forums = Forum::with('subforums')->get();
-        //return response()->json($forums);
-        // Puedes pasar datos a la vista si es necesario
+
         return Inertia::render('AdminPanel',[
             'data'=>$forums,
             'entityName' => 'forums' 
@@ -69,11 +67,10 @@ class AdminPanelController extends Controller
         // Obtener todos los foros
         $forums = Forum::all();
         
-        // Devolver la respuesta JSON con Inertia
         return Inertia::render('AdminPanel', [
             'forums' => $forums,
             'data' => $subforums,
-            'entityName' => 'subforums' // Aquí agregamos 'entityName' al array de datos
+            'entityName' => 'subforums'
         ]);
     }
     

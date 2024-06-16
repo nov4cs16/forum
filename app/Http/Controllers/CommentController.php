@@ -54,7 +54,6 @@ class CommentController extends Controller
     public function index()
     {
         $posts = Comment::with('user', 'comments')->get();
-        //$posts = Comment::all();
         return response()->json($posts);
     }
 
@@ -71,8 +70,6 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $request->validate([
             'post_id' => 'required|exists:posts,id',
             'user_id' => 'required|exists:users,id',
@@ -80,25 +77,20 @@ class CommentController extends Controller
         ]);
         $subforum = Post::find($request->post_id);
 
+        // Crear el subforo con los datos proporcionados en la solicitud
+        $post = Comment::create([
+            'post_id' => $request->post_id,
+            'user_id' => $request->user_id,
+            'body' => $request->body
+        ]);
+        $post->load('post');
+        $subforum->comments()->save($post);
 
-    // Crear el subforo con los datos proporcionados en la solicitud
-    $post = Comment::create([
-        'post_id' => $request->post_id,        
-        'user_id' => $request->user_id,
-        'body' => $request->body
-    ]);
-    $post->load('post');
-    $subforum->comments()->save($post);
-    //$posts = Comment::all();
-    //$subforums = Subforum::all();
-
-    $post = Post::with('user','comments.user')->findOrFail($request->post_id);
-    return Inertia::render('Thread', [
-      //  'subforums' => $subforums,
-        'data' => $post,
-        'entityName' => 'comments' // Aquí agregamos 'entityName' al array de datos
-    ]);
-        //return response()->json($forum, 201);
+        $post = Post::with('user', 'comments.user')->findOrFail($request->post_id);
+        return Inertia::render('Thread', [
+            'data' => $post,
+            'entityName' => 'comments'
+        ]);
     }
 
 

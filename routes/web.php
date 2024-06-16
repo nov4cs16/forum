@@ -55,7 +55,7 @@ Route::get('/', function () {
         $forum->type = 'link';
         return $forum;
     });
-    
+
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -103,25 +103,28 @@ Route::post('/send-message', function (Request $request) {
     return Inertia::render('Portfolio')->with('success', 'Mensaje enviado exitosamente');
 })->name('send-message')->middleware('throttle:3,1');
 
-// Forum Routes
+// Public Routes
 Route::get('forum/{id}', [ForumController::class, 'show'])->name('forum.show');
 Route::get('subforum/{id}', [SubforumController::class, 'show'])->name('subforum.show');
 Route::get('post/{id}', [PostController::class, 'show'])->name('post.show');
 
 // Authenticated Routes
 Route::middleware(['auth', 'verified'])->group(function () {
+    //Comment routes
     Route::post('comment', [CommentController::class, 'store'])->name('commentt.store')->middleware('throttle:3,1');
+    //Post routes
     Route::post('post', [PostController::class, 'store'])->middleware('throttle:5,1');
     Route::get('post', [PostController::class, 'create'])->name('post');
+    //Subforum routes
     Route::post('subforum', [SubforumController::class, 'store']);
     Route::get('subforum', [SubforumController::class, 'create'])->name('subforum');
+    Route::put('subforum/{id}', [SubforumController::class, 'update'])->name('subforum.update');
+    Route::delete('subforum/{id}', [SubforumController::class, 'destroy'])->name('subforum.delete');
+    //Forum routes
     Route::post('forum', [ForumController::class, 'store']);
     Route::get('forum', [ForumController::class, 'create'])->name('forum');
     Route::put('forum/{id}', [ForumController::class, 'update'])->name('forum.update');
-    Route::put('subforum/{id}', [SubforumController::class, 'update'])->name('subforum.update');
     Route::delete('forum/{id}', [ForumController::class, 'destroy'])->name('forum.delete');
-    Route::delete('subforum/{id}', [SubforumController::class, 'destroy'])->name('subforum.delete');
-    
     // Admin Panel Routes
     Route::get('/admin_panel', [AdminPanelController::class, 'index'])->name('admin.panel');
     Route::get('/admin_panel/forums', [AdminPanelController::class, 'index_forums'])->name('admin.panel.forums');
