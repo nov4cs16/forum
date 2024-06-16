@@ -10,7 +10,7 @@ Copyright (c) 2014-present Matt Zabriskie & Collaborators
 Copyright (c) Taylor Otwell
 Copyright (c) Facebook, Inc. and its affiliates.
 Copyright (c) Tighten Co. <hello@tighten.co>
-Copyright (c) 2024 Sergio Omar Ruiz Dia
+Copyright (c) 2024 Sergio RD
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

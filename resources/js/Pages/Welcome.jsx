@@ -34,10 +34,8 @@ SOFTWARE.
 // For the full license, see LICENSE.md in the project root.
 
 import CustomTable from '@/Components/table/CustomTable';
-import { Link, Head } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
 import { usePage } from '@inertiajs/react';
-import './Welcome.css'
-import { useEffect, useRef, useState } from 'react';
 import PublicLayout from '@/Layouts/PublicLayout';
 
 

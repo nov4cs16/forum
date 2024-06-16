@@ -92,17 +92,7 @@ export default function Thread({ auth, laravelVersion, phpVersion }) {
                             </article>
 
 
-                            <section>
-                                {comments.length > 2 &&
-                                    <div className="mt-8 text-left mb-8">
-                                        <button
-                                            onClick={openModal}
-                                            className="bg-blue-950 text-white px-4 py-2 rounded-md shadow-sm"
-                                        >
-                                            Responder
-                                        </button>
-                                    </div>
-                                }
+                            <section>                              
                                   <div className="mt-8 text-left mb-8">
                                         <button
                                             onClick={openModal}
@@ -129,6 +119,16 @@ export default function Thread({ auth, laravelVersion, phpVersion }) {
                                             </p>
                                         </div>
                                     ))}
+                                      {comments.length > 2 &&
+                                    <div className="mt-8 text-left mb-8">
+                                        <button
+                                            onClick={openModal}
+                                            className="bg-blue-950 text-white px-4 py-2 rounded-md shadow-sm"
+                                        >
+                                            Responder
+                                        </button>
+                                    </div>
+                                }
                                 </div>
 
                             </section>

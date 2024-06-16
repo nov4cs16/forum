@@ -252,7 +252,7 @@ const Portfolio = () => {
                     <h2>PORTFOLIO</h2>
                     <div className="galeria">
                         <div className="proyecto">
-                            <img src="/pc.jpg" alt="" />
+                            <img src="/forum.png" alt="" />
                             <div className="overlay">
                                 <h3>Diseño Creativo</h3>
                                 <p>Fotografía</p>
