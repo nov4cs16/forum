@@ -601,10 +601,10 @@ textarea{
     padding-top: 84px;
     
 }  
-@media (max-height: 614px) {
+@media (max-height: 921px) {
     .portfolio{        
      /*   height: 1043px !important;*/
-        height: 614px !important;
+        height: 921px !important;
        
     }
     
