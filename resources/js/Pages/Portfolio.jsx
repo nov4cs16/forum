@@ -138,7 +138,7 @@ const Portfolio = () => {
                         <img src="/sergio.jpg" alt="" />
                     </div>
                     <h1>Sergio Ruiz Dia</h1>
-                    <h2>Programador fullstack React/Next.js/Node.js</h2>
+                    <h2>Programador web fullstack React/Laravel</h2>
                     <div className="redes">
                         <a href="https://wa.me/1131116759" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faWhatsapp} /></a>
                         {/*<a href="#"> <FontAwesomeIcon icon={faFacebookF} /></a>
@@ -151,7 +151,7 @@ const Portfolio = () => {
 
             <section id="sobremi" className="sobremi">
                 <div className="contenido-seccion">
-                    <h2>Sobre Mí</h2>
+                    <h2 className="sobremi-title">Sobre Mí</h2>
                     <p style={{ fontSize: '1.2rem' }}><span style={{ fontSize: '1.5rem' }}>Hola, soy Sergio Ruiz Dia.</span> soy programador web fullstack <span>:)</span></p>
 
                     <div className="fila">
@@ -207,13 +207,12 @@ const Portfolio = () => {
             </section>
 
             <section id="skills" className="skills">
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '100px',width:'100vw',justifyContent:'center',alignItems:'center' }} className="contenido-seccion">
-                    <h2>Conocimientos</h2>
-
-                    <div style={{width:'100vw',display:'flex',justifyContent:'center',gap:'30px'}} className="fila">
-                    <div style={{ height: '20vh', width: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',textAlign:'center', gap: '20px' }} className="col">
+                <div style={{ gap:'20px',display: 'flex', flexDirection: 'column', gap: '50px', width: '100vw', justifyContent: 'center', alignItems: 'center' }} className="contenido-seccion">
+                    <h2 className="conocimientos-title">Conocimientos</h2>
+                    <div style={{ width: '100vw', display: 'flex', justifyContent: 'center', gap: '40px' }} className="fila">
+                        <div style={{ height: '200px', width: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', gap: '20px' }} className="col">
                             <h3 style={{ color: '#e56121' }}>FRONTEND</h3>
-                            <div style={{height:'200px'}} className="contenedor-intereses">
+                            <div style={{ height: '200px' }} className="contenedor-intereses">
                                 <div className="interes">
                                     <i className="fa-solid fa-gamepad"></i>
                                     <span>REACT</span>
@@ -238,13 +237,13 @@ const Portfolio = () => {
                                     <i className="fa-solid fa-gamepad"></i>
                                     <span>INERTIA</span>
                                 </div>
-                 
+
                             </div>
                         </div>
 
-                        <div style={{ height: '20vh', width: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',textAlign:'center', gap: '20px' }} className="col">
+                        <div style={{ height: '200px', width: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', gap: '20px' }} className="col">
                             <h3 style={{ color: '#e56121' }}>BACKEND</h3>
-                            <div style={{height:'200px'}} className="contenedor-intereses">
+                            <div style={{ height: '200px' }} className="contenedor-intereses">
                                 <div className="interes">
                                     <i className="fa-solid fa-gamepad"></i>
                                     <span>LARAVEL</span>
@@ -275,12 +274,12 @@ const Portfolio = () => {
 
                 </div>
             </section>
-       
+
 
 
             <section id="portfolio" className="portfolio">
                 <div className="contenido-seccion">
-                    <h2>PORTFOLIO</h2>
+                    <h2 className="portfolio-title">PORTFOLIO</h2>
                     <div className="galeria">
                         <div className="proyecto">
                             <img src="/forum.png" alt="" />
@@ -290,7 +289,7 @@ const Portfolio = () => {
                             </div>
 
                             <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
-                            <span style={{textAlign:'center', fontSize: '1.5em', marginBottom: '5px'}}>Foro</span>
+                                <span style={{ textAlign: 'center', fontSize: '1.5em', marginBottom: '5px' }}>Foro</span>
                                 <div className="fila" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                     <a href="https://sergioruizdiaweb.website/"
                                         style={{
@@ -309,7 +308,7 @@ const Portfolio = () => {
 
                                         }}>
                                         <span style={{ fontSize: '1.5em', marginBottom: '5px', marginRight: '6px' }}>Pagina web</span>
-                                     {/*   <FontAwesomeIcon icon={faGithub} style={{ fontSize: '2em' }} />*/}
+                                        {/*   <FontAwesomeIcon icon={faGithub} style={{ fontSize: '2em' }} />*/}
                                     </a>
                                 </div>
                                 <div className="fila" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
@@ -343,8 +342,8 @@ const Portfolio = () => {
 
             <section id="contacto" className="contacto bg-gray-100">
 
-                <div style={{ backgroundColor: '#E56121', height: 'max-content' }} className=" bg-white p-8 rounded-lg shadow-lg">
-                    <h2 style={{ color: '#ffffff' }} className="text-2xl font-semibold text-gray-900 mb-6 text-center">Contact Form</h2>
+                <div style={{width:'600px', backgroundColor: '#E56121', height: 'max-content' }} className="contact bg-white p-8 rounded-lg shadow-lg">
+                    <h2 style={{ color: '#ffffff' }} className="contact-form text-2xl font-semibold text-gray-900 mb-6 text-center">Contactame!</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-6">
                             <label htmlFor="nombre" className="block text-sm font-medium text-gray-700">
@@ -372,12 +371,13 @@ const Portfolio = () => {
                                 id="mensaje"
                                 value={data.mensaje}
                                 onChange={handleChange}
+                                style={{height:'400px'}}
                                 className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2 h-32"
                             />
                             {errors.mensaje && <div className="text-red-500 mt-2">{errors.mensaje}</div>}
                         </div>
                         <div className="flex justify-end mt-6">
-                   
+
                             <button
                                 type="submit"
                                 className="bg-indigo-600 text-white px-4 py-2 rounded-md shadow-sm hover:bg-indigo-700 disabled:opacity-50"

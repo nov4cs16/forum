@@ -13,7 +13,14 @@ html{
     scroll-behavior: smooth;
 }
 /* MENU */
-
+@media (max-width:376px){
+h1,.portfolio-title, .sobremi-title, .conocimientos-title, .contact-form{
+font-size: xx-large !important;
+}
+h3{
+    font-size: x-large !important;
+}
+}
 label{
     color:white !important; 
     font-size: 20px !important;
@@ -279,7 +286,15 @@ textarea{
     background-color: #252A2E;
     color: #fff;
     padding: 50px 20px;    
+    padding-top: 114px; 
     height: 100vh;
+}
+
+@media (max-height: 691px) {
+    .skills{
+        padding-top: 114px;
+        height: 691px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -601,10 +616,10 @@ textarea{
     padding-top: 84px;
     
 }  
-@media (max-height: 921px) {
+@media (max-height: 747px) {
     .portfolio{        
      /*   height: 1043px !important;*/
-        height: 921px !important;
+      height: 747px;
        
     }
     
@@ -673,9 +688,23 @@ textarea{
     height: 100vh;
     padding-top: 84px;
 }
-@media (max-height: 673px) {
+
+@media (max-width: 674px) {
+    .contact{
+        width:99vw;
+        border-top-right-radius: 0%;
+        border-top-left-radius: 0%;
+    }
+    #mensaje{
+        height: 150px !important;
+    }
+}
+       
+
+
+@media (max-height: 752px) {
     .contacto{        
-        height: 673px !important;
+        height: 752px !important;
        
     }
     
