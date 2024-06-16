@@ -213,14 +213,30 @@ const Portfolio = () => {
                     <div style={{width:'100vw',display:'flex',justifyContent:'center',gap:'30px'}} className="fila">
                     <div style={{ height: '20vh', width: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',textAlign:'center', gap: '20px' }} className="col">
                             <h3 style={{ color: '#e56121' }}>FRONTEND</h3>
-                            <div className="contenedor-intereses">
+                            <div style={{height:'200px'}} className="contenedor-intereses">
                                 <div className="interes">
                                     <i className="fa-solid fa-gamepad"></i>
                                     <span>REACT</span>
                                 </div>
                                 <div className="interes">
                                     <i className="fa-solid fa-gamepad"></i>
+                                    <span>TAILWIND</span>
+                                </div>
+                                <div className="interes">
+                                    <i className="fa-solid fa-gamepad"></i>
                                     <span>NEXT.JS</span>
+                                </div>
+                                <div className="interes">
+                                    <i className="fa-solid fa-gamepad"></i>
+                                    <span>JAVASCRIPT</span>
+                                </div>
+                                <div className="interes">
+                                    <i className="fa-solid fa-gamepad"></i>
+                                    <span>CSS</span>
+                                </div>
+                                <div className="interes">
+                                    <i className="fa-solid fa-gamepad"></i>
+                                    <span>INERTIA</span>
                                 </div>
                  
                             </div>
@@ -228,7 +244,7 @@ const Portfolio = () => {
 
                         <div style={{ height: '20vh', width: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',textAlign:'center', gap: '20px' }} className="col">
                             <h3 style={{ color: '#e56121' }}>BACKEND</h3>
-                            <div className="contenedor-intereses">
+                            <div style={{height:'200px'}} className="contenedor-intereses">
                                 <div className="interes">
                                     <i className="fa-solid fa-gamepad"></i>
                                     <span>LARAVEL</span>
@@ -237,7 +253,22 @@ const Portfolio = () => {
                                     <i className="fa-solid fa-gamepad"></i>
                                     <span>NODE.JS (básico)</span>
                                 </div>
-                 
+                                <div className="interes">
+                                    <i className="fa-solid fa-gamepad"></i>
+                                    <span>INERTIA</span>
+                                </div>
+                                <div className="interes">
+                                    <i className="fa-solid fa-gamepad"></i>
+                                    <span>&nbsp;</span>
+                                </div>
+                                <div className="interes">
+                                    <i className="fa-solid fa-gamepad"></i>
+                                    <span>&nbsp;</span>
+                                </div>
+                                <div className="interes">
+                                    <i className="fa-solid fa-gamepad"></i>
+                                    <span>&nbsp;</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -259,6 +290,7 @@ const Portfolio = () => {
                             </div>
 
                             <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                            <span style={{textAlign:'center', fontSize: '1.5em', marginBottom: '5px'}}>Foro</span>
                                 <div className="fila" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                     <a href="https://sergioruizdiaweb.website/"
                                         style={{
